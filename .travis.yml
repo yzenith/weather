@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+- 12.16.1
+deploy:
+  provider: heroku
+  api_key:
+    secure: UwFwN6nz5AiFgRi76fSUquUBSlUxZjgzSp9RcJPZJLFrA63fT6nk5xMuD6k13eIOnyqg0EjffJF2/fOzqXneDt6M+vuTY9TCxJXNdMo8oENN/ohPl7aTsWD+hhVzp+brujGTRaDZHXH2h0mJjEWO79F3VjDq0Na6t5PAK+5IurK1IsubRHBXvMd9u/cJDxbEDAIwJcUr48b0WPBFXNSddQmgAo+u5GMR0lK0njv8QKQLAiHB2WB8cAiSPG4jqUk30n6FTJGaBgb7Ox4p9vfr5gIOm8wpFRe+W/n+GdIRfUSxp27q1GqvDFdp5HhmNe21pedpXQDloYfMWaiHQ0EWCItsd26pKEu/h3Uw5uTruyJYAnhiq00UtVPJ9jMGh6vn7kjeZDzgwKyHCURJbtDnaBaPMqGmLSyAn95qbJhS4VCtmgLwYu258Uyldjxn9D4b1XQ5wFV6ddfAct0y92pn79yZ5K5qNK4LXw0g4lCUKs+5gvHj2w6ENCI17LtwWO7I7kXoj1W7nJ08FhBzE6JpYsnEaTnh5vA1L2ihWpD/a2aaHBtj7tLH1Yk+Pe3EOM3h1t88FQTUEWBFCUcIctLeFLtGWbkP2A36gDnJNXbUICJm+AjBUrlf+RHs/VYsF7ebMs985ln9T4kRpjHNmJfi75sARI2kEIPq/UvLTplV0ns=
+  app: pure-bayou-72397
+  on:
+    repo: yzenith/weather
