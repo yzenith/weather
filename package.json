@@ -11,8 +11,10 @@
     "test": "mocha"
   },
   "dependencies": {
+    "chai": "^4.2.0",
     "ejs": "^2.5.6",
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "mocha": "^7.1.1"
   },
   "devDependencies": {
     "request": "^2.81.0",
