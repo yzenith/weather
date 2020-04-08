@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Sam Yan's nodejs APP",
   "engines": {
-    "node": "12.x"
+    "node": "12.16.1"
   },
   "main": "index.js",
   "scripts": {
