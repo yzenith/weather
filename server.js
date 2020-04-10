@@ -1,12 +1,14 @@
 const express = require('express');
 const morgan = require('morgan');
 const app = express();
+const cityWeatherRouter = require('./cityWeatherRouter');
 
 app.use(morgan("normal"));
 app.use(express.static("public"))
+app.use('/city-weather', cityWeatherRouter);
 
 app.get("/", (req,res)=>{
-  res.sendFile(__dirname + "/views/index.html");
+  res.status(200).sendFile(__dirname + "/views/index.html");
 })
 
 
