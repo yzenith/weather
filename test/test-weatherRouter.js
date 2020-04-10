@@ -15,7 +15,7 @@ describe('cityWeatherRouter testing', function(){
     return closeServer();
   });
 
-  it("it should return a successful JSON body", function(res){
+  it("it should return a successful JSON body", function(){
     return chai
       .request(app)
       .get('/city-weather')
