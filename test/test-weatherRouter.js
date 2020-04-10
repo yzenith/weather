@@ -21,8 +21,8 @@ describe('cityWeatherRouter testing', function(){
       .get('/city-weather')
       .then(function(res){
         expect(res).to.have.status(200);
-        expect(res.body).to.be.a('json');
-        expect(res.body).to.not(null)
+        expect(res).to.be.json;
+        expect(res.body).to.not.equal(null)
       })
   });
 })
