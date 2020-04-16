@@ -15,7 +15,12 @@ router.get('/', (req,res)=>{
 router.get('/:cityname', (req,res)=>{
   const cityname = req.params.cityname
   const cityWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=7fd64bea57746b38d50d97687525f21a`;
-  http.request(cityWeatherUrl,function(err, req, res) {
+  const options = {
+    hostname: `api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=7fd64bea57746b38d50d97687525f21a`,
+    path: '/',
+    method: 'GET',
+};
+  http.request(options,function(err, req, res) {
         if(!err){
             const weather = JSON.parse(res.body);
             res.send({
