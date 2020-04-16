@@ -4,7 +4,7 @@ node_js:
 deploy:
   provider: heroku
   api_key:
-    secure: rWyk7qzhhRUWMm/Uvk2LSCI715kAwrPrc/kuekXv2B/ii4vOVw8dleOHPmtKMoLlOZZoDyrTccfpCdHUb+0fspoje7RcbCEIAYxqvntzsrJ/560oEpGRikJEq3y8Xuu32Eia82hOSezRG0RuFoGST7t54na5IoUFyNzR8+JgKOWuCVqZqnMTDkfT2zqcab9mKp48IwuGMzZEGDNZEc0tx6iGkimbmMAFCeHe3c2JWPj3i5WJH3bDuVPwWpv0U6l91I8e0nTi/IBE9Ah3FaW+D0ZuSUx09L7tLm6AG3gi4fxPbFyJjXij0+oJdyKA9hliP15eyo+T/XveRK46Vds4ld2YTBCjSVrzKeMFrmzITCm9Yp5X27lHQwFSo/6BNa1pAzKakShouPFwoZghNXJlFW+iXqWnHwByRMPX7/mCnH6e1S5EPeIvW1cKjgoMOwDfiufjjhce7iFe+9Wok00UiHjXIWmb4fPL3QGY9ehLYxGi/LoMdSnRVUY7sdddkmX3CsHUawpA+R0mSDOxZJdPP7s7MhfhKuBORrSaAa3wZK3tBzAzY9tb5vYP/M0N7jcyMoBYs4CkYvi9DRfGbER4c+Ot6WgSMWaFmvxvyb2Uh2uMf+9zdhXB0je1INsJW9fT6HLCbF/+3s9Xl7Z4Xngq9qMwBuXK7dJ4No5/ybimzhI=
+    secure: 3408568e-7406-454e-a7a8-103c2c3cb37c
   app: samyanweather
   on:
     repo: yzenith/weather
