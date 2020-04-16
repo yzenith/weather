@@ -12,8 +12,9 @@ router.get('/', (req,res)=>{
 });
 
 // [POST] input city name
-router.post('/', (req,res)=>{
-  const cityWeatherUrl = `api.openweathermap.org/data/2.5/weather?q=${req.params.cityname}&appid=7fd64bea57746b38d50d97687525f21a`;
+router.get('/:cityname', (req,res)=>{
+  const cityname = req.params.cityname
+  const cityWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=7fd64bea57746b38d50d97687525f21a`;
   http.get(cityWeatherUrl,function(err, req, res) {
         if(!err){
             const weather = JSON.parse(res.body);
