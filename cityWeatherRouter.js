@@ -9,7 +9,7 @@ const request = require('request');
 router.get('/', (req,res)=>{
 
     // request openweather GET method
-    let city = `"Dallas" || ${req.params.city}`;
+    let city = "Dallas";
     let appid = "7fd64bea57746b38d50d97687525f21a";
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${appid}`;
     const data = request.get(url, function (err, response, body) {
