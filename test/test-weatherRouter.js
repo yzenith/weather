@@ -23,7 +23,7 @@ describe('cityWeatherRouter testing', function(){
       .then(function(res){
         expect(res).to.have.status(200);
         expect(res).to.be.json;
-        expect(res.body).to.not.equal(null)
+        expect(res.body.weather).to.not.equal(null)
       })
   });
   /*
