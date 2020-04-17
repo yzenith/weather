@@ -17,7 +17,7 @@ router.get('/', (req,res)=>{
         return error;
       } else {
         let weather = JSON.parse(body);
-        return weather;
+        return body;
       }
     })
 
