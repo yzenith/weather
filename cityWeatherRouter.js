@@ -12,17 +12,16 @@ router.get('/', (req,res)=>{
     let city = "Dallas";
     let appid = "7fd64bea57746b38d50d97687525f21a";
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${appid}`;
-    const data = request.get(url, function (err, response, body) {
-      if(err){
-        return error;
-      } else {
-        let weather = JSON.parse(body);
-        return response;
-      }
+    const data = new Promise(function(resolve, reject){
+      request.get(url, function (err, response, body) {
+        if(err){
+          reject(error);
+        } else {
+          resolve(body);
+        }
+      })
     })
-
     res.status(200).send(data)
-
 
 })
 
