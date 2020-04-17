@@ -3,42 +3,28 @@ const app = express();
 const router = express.Router();
 const parser = require('body-parser');
 const parserJson = parser.json();
+const request = require('request');
 
 // [GET] openWeather API endpoint
 router.get('/', (req,res)=>{
-  res.status(200).send({
-    process: "succeed!"
-  })
-});
 
-// [POST] input city name
-router.get('/:cityname', (req,res)=>{
-  const cityname = req.params.cityname
-  const cityWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=7fd64bea57746b38d50d97687525f21a`;
-  const options = {
-    hostname: `api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=7fd64bea57746b38d50d97687525f21a`,
-    path: '/',
-    method: 'GET',
-};
-  http.request(options,function(err, req, res) {
-        if(!err){
-            const weather = JSON.parse(res.body);
-            res.send({
-                status: 201,
-                data: weather,
-                message: 'Succeed!'
-            })
-        }else {
-            res.send({
-                status: -1,
-                message: 'Failed!'
-            })
-        }
-
+    // request openweather GET method
+    let city = `"Dallas" || ${req.params.city}`;
+    let appid = "7fd64bea57746b38d50d97687525f21a";
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${appid}`;
+    const data = request.get(url, function (err, response, body) {
+      if(err){
+        return error;
+      } else {
+        let weather = JSON.parse(body);
+        return weather;
+      }
     })
+
+    res.status(200).send(data)
 
 
 })
 
 
-module.exports = router
+module.exports = router;
