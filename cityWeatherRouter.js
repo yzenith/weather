@@ -33,26 +33,4 @@ router.get('/:city?', async (req,res)=>{
     })
 })
 
-/*
-router.get('/:city', async (req,res)=>{
-
-    // request openweather GET method
-    let city = req.params.city;
-    let appid = "7fd64bea57746b38d50d97687525f21a";
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${appid}&type=${type}&lang=${lang}&cnt=${cnt}&units=${units}`;
-    return new Promise(function(resolve, reject){
-      request.get(url, function (err, response, body) {
-        if(err){
-          reject(error);
-        } else {
-          // console.log(`Body is: ${body}`) it will return the json body
-          resolve(
-            res.status(200).json(body)
-          );
-        }
-      })
-    })
-})
-*/
-
 module.exports = router;

@@ -23,22 +23,23 @@ describe('cityWeatherRouter testing', function(){
       .then(function(res){
         expect(res).to.have.status(200);
         expect(res).to.be.json;
-        expect(res.body.weather).to.not.equal(null)
+        expect(res.body.weather).to.not.equal(null);
+        expect(res.body).to.include("coord");
+        expect(res.body).to.include("weather");
       })
   });
-  /*
-  // GET "/:cityname"
-  it("should return a city's weather json", function(){
+
+  it('should return 404 error when city name not exist', function(){
     return chai
       .request(app)
-      .get('/dallas')
+      .get('/city-weather/sjdhfksj')
       .then(function(res){
         expect(res).to.have.status(200);
         expect(res).to.be.json;
-        expect(res.body).to.not.equal(null);
+        expect(res.body).to.include("cod");
+        expect(res.body).to.include("message");
       })
-  });
-  */
+  })
 
 
 
