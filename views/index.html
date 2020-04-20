@@ -1,4 +1,34 @@
-<html>
-  <h1>Hello World!</h1>
+<!DOCTYPE html>
+<html lang="us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Sam Yan's Weather App</title>
+    <link href="../public/index.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+  </head>
+
+  <body>
+	<nav role="navigation">
+		<a href="" class="brand"><i class="fas fa-sun"></i> Weather</a>
+		<a class="bar-icon"><i class="fas fa-search"></i></a>
+		<div class="search-place">
+			<label for="search-term">The City Name </label>
+			<input type="text" placeholder="Plano, US ..." id="search-term">
+			<button type="submit">Submit <i class="fas fa-paper-plane"></i></button>
+		</div>
+	</nav>
+	<main role="main" aria-live="assertive" class="content-body">
+		<section role="region" class="quotes-area col-12"></section>
+		<section role="region" class="weather-area col-12 col-6"></section>
+	</main>
+
+
+	<!-- jquery and js file index -->
+  	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="../public/index.js"></script>
+  </body>
 
 </html>

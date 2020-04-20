@@ -1,9 +1,8 @@
 const express = require('express');
 const morgan = require('morgan');
 const app = express();
-const cityWeatherRouter = require('./cityWeatherRouter');
-
 app.use(morgan("normal"));
+const cityWeatherRouter = require('./cityWeatherRouter');
 app.use(express.static("public"))
 app.use('/city-weather', cityWeatherRouter);
 

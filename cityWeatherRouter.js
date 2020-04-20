@@ -4,14 +4,21 @@ const router = express.Router();
 const parser = require('body-parser');
 const parserJson = parser.json();
 const request = require('request');
+const helmet = require('helmet');
+
+let appid = "7fd64bea57746b38d50d97687525f21a";
+let type = "accurate";
+let lang = "en";
+let cnt = 7;
+let units = "imperial";
 
 // [GET] openWeather API endpoint
-router.get('/', (req,res)=>{
+router.get('/:city?', async (req,res)=>{
 
     // request openweather GET method
-    let city = "dallas";
-    let appid = "7fd64bea57746b38d50d97687525f21a";
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${appid}`;
+    let city = req.params.city || "dallas";
+
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${appid}&type=${type}&lang=${lang}&cnt=${cnt}&units=${units}`;
     return new Promise(function(resolve, reject){
       request.get(url, function (err, response, body) {
         if(err){
@@ -26,12 +33,13 @@ router.get('/', (req,res)=>{
     })
 })
 
-router.get('/:city', (req,res)=>{
+/*
+router.get('/:city', async (req,res)=>{
 
     // request openweather GET method
     let city = req.params.city;
     let appid = "7fd64bea57746b38d50d97687525f21a";
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${appid}`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${appid}&type=${type}&lang=${lang}&cnt=${cnt}&units=${units}`;
     return new Promise(function(resolve, reject){
       request.get(url, function (err, response, body) {
         if(err){
@@ -45,6 +53,6 @@ router.get('/:city', (req,res)=>{
       })
     })
 })
-
+*/
 
 module.exports = router;
