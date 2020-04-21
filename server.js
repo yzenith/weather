@@ -1,6 +1,10 @@
 const express = require('express');
 const morgan = require('morgan');
 const app = express();
+const helmet = require('helmet');
+const compression = require('compression');
+app.use(helmet());
+app.use(compression())
 app.use(morgan("normal"));
 const cityWeatherRouter = require('./cityWeatherRouter');
 app.use(express.static("public"))

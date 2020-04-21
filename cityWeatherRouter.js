@@ -1,21 +1,20 @@
 const express = require('express');
 const app = express();
+const compression = require('compression');
 const router = express.Router();
 const parser = require('body-parser');
 const parserJson = parser.json();
 const request = require('request');
-const helmet = require('helmet');
-
-let appid = "7fd64bea57746b38d50d97687525f21a";
-let type = "accurate";
-let lang = "en";
-let cnt = 7;
-let units = "imperial";
 
 // [GET] openWeather API endpoint
 router.get('/:city?', async (req,res)=>{
 
     // request openweather GET method
+    let appid = "7fd64bea57746b38d50d97687525f21a";
+    let type = "accurate";
+    let lang = "en";
+    let cnt = 7;
+    let units = "imperial";
     let city = req.params.city || "dallas";
 
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${appid}&type=${type}&lang=${lang}&cnt=${cnt}&units=${units}`;
