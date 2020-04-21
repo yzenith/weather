@@ -10,8 +10,25 @@ const cityWeatherRouter = require('./cityWeatherRouter');
 app.use(express.static("public"))
 app.use('/city-weather', cityWeatherRouter);
 
-app.get("/", (req,res)=>{
-  res.status(200).sendFile(__dirname + "/views/index.html");
+app.get("/", async (req,res, next)=>{
+  // res.status(200).sendFile(__dirname + "/views/index.html");
+  superagent.get('https://cnodejs.org')
+    .end(function(err, sres){
+      if(err){
+        return next(err);
+      }
+      var $ = cheerio.load(sres.text);
+      var items = [];
+      $('#topic_list .topic_title').each(function(idx, element){
+        var $element = $(element);
+        items.push({
+          title: $element.attr('title'),
+          href: $element.attr('href')
+        });
+      });
+      console.log(items);
+      res.status(200).send(items);
+    })
 })
 
 
