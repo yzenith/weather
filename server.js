@@ -22,11 +22,15 @@ app.get("/", async (req,res, next)=>{
       }
       var $ = cheerio.load(sres.text);
       var items = [];
-      $('#topic_list .topic_title').each(function(idx, element){
-        var $element = $(element);
+      $('#topic_list .cell').each(function(idx, element){
+        var $user_avatar = $(element .user_avatar);
+        var $count_of_replies = $(element .count_of_replies);
+        var $topic_title = $(element .topic_title);
         items.push({
-          title: $element.attr('title'),
-          href: $element.attr('href')
+          title: $topic_title.attr('title'),
+          href: $topic_title.attr('href'),
+          comment1: $count_of_replies.text(),
+          author: $user_avatar.attr('href')
         });
       });
       console.log(items);
