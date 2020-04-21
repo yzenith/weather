@@ -3,8 +3,11 @@ const morgan = require('morgan');
 const app = express();
 const helmet = require('helmet');
 const compression = require('compression');
+const superagent = require('superagent');
+const cheerio = require('cheerio');
+
 app.use(helmet());
-app.use(compression())
+app.use(compression());
 app.use(morgan("normal"));
 const cityWeatherRouter = require('./cityWeatherRouter');
 app.use(express.static("public"))
